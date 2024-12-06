@@ -1,129 +1,212 @@
 <!Doctype html>
 <html>
 <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-<title>Family Guy</title>
-<style>
-    .season {
-    background-color: green;
-    color: white;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 50%;
-    text-align: center;
-    font-family:Cairo ;
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-}
-.li {
-    border: 10px solid rgb(9, 119, 9);
-    margin: 20px;
-    background-color: rgb(9, 119, 9);
-    border-radius: 30px;
-    border-width: 20%;
-    text-align: center;
-    font-family: courier;
-}
-.episodes {
-    display: none;
-    background-color: #333;
-    color: white;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: left;
-    width: 50%;
-}
+    <meta charset="UTF-8">
+    <!-- Meta tag لضبط العرض على جميع الأجهزة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- روابط لخطوط من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
-.style2 {
-    color: black;
-    font-size: 15px;
-    font-family: "Cairo", sans-serif;
-    margin: 10px 10px 10px 750px;
-    padding: 10px;
-    width: 50%;
-    text-align: right;
-    border: 2px solid rgb(9, 119, 9);
-    border-radius: 20px;
-    background-color: rgb(9, 119, 9);
-}
-.last-item {
-    text-align: right;
-    direction: rtl;
-    margin-right: 20px;
-    padding: 10px;
-}
-body {
-    background-color: black;
-    font-family: courier, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-h1 {
-    color: black;
-    font-size: 40px;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 10px;
-    width: 100%;
-    border: 2px solid rgb(9, 119, 9);
-    border-radius: 20px;
-    background-color: rgb(9, 119, 9);
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px;
-}
-img {
-    border-radius: 20px;
-    max-width: 520px;
-    height: auto;
-    margin-right: 10px;
-    border: 10px groove ;
-}
-p {
-    color: black;
-    font-size: 35px;
-    font-family: "Cairo", sans-serif;
-    margin: 0;
-    padding: 20px;
-    width: 50%;
-    text-align: right;
-    border: 2px solid rgb(9, 119, 9);
-    border-radius: 20px;
-    background-color: rgb(9, 119, 9);
-}
-mark {
-    background-color: rgb(9, 119, 9);
-    color: white;
-}
-.li a {
-    display: block; /* يجعل الرابط يغطي مساحة العنصر بالكامل */
-    color: white; /* لون النص داخل الرابط */
-    text-decoration: none; /* إزالة الخط السفلي للرابط */
-    padding: 10px; /* مساحة داخلية للرابط */
-    border-radius: 30px; /* مطابقة الحدود لعنصر li */
-}
-.li:hover {
-    background-color: #065e06; /* تأثير hover على العنصر li */
-}
+    <title>Family Guy</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-</style>
+        h1 {
+            color: black;
+            font-size: 40px;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+            width: 100%;
+            border: 2px solid rgb(9, 119, 9);
+            border-radius: 20px;
+            background-color: rgb(9, 119, 9);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+            flex-wrap: wrap; /* لتنسيق العناصر عند الشاشات الصغيرة */
+        }
+
+        img {
+            border-radius: 20px;
+            max-width: 100%;
+            height: auto;
+            margin-right: 10px;
+            border: 10px groove ;
+        }
+
+        .season {
+            background-color: green;
+            color: white;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 50%;
+            text-align: center;
+            font-family: 'Cairo';
+        }
+
+        .episodes {
+            display: none;
+            background-color: #333;
+            color: white;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+            width: 50%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .li {
+            border: 10px solid rgb(9, 119, 9);
+            margin: 20px;
+            background-color: rgb(9, 119, 9);
+            border-radius: 30px;
+            border-width: 20%;
+            text-align: center;
+            font-family: 'Courier';
+        }
+
+        .li a {
+            display: block; /* يجعل الرابط يغطي مساحة العنصر بالكامل */
+            color: white; /* لون النص داخل الرابط */
+            text-decoration: none; /* إزالة الخط السفلي للرابط */
+            padding: 10px; /* مساحة داخلية للرابط */
+            border-radius: 30px; /* مطابقة الحدود لعنصر li */
+        }
+
+        .li:hover {
+            background-color: #065e06; /* تأثير hover على العنصر li */
+        }
+
+        .style2 {
+            color: black;
+            font-size: 15px;
+            font-family: "Cairo", sans-serif;
+            margin: 10px 10px 10px 750px;
+            padding: 10px;
+            width: 50%;
+            text-align: right;
+            border: 2px solid rgb(9, 119, 9);
+            border-radius: 20px;
+            background-color: rgb(9, 119, 9);
+        }
+
+        .last-item {
+            text-align: right;
+            direction: rtl;
+            margin-right: 20px;
+            padding: 10px;
+        }
+
+        p {
+            color: black;
+            font-size: 35px;
+            font-family: "Cairo", sans-serif;
+            margin: 0;
+            padding: 20px;
+            width: 50%;
+            text-align: right;
+            border: 2px solid rgb(9, 119, 9);
+            border-radius: 20px;
+            background-color: rgb(9, 119, 9);
+        }
+
+        mark {
+            background-color: rgb(9, 119, 9);
+            color: white;
+        }
+
+        /* استعلامات الوسائط (media queries) لتصميم مرن */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                flex-direction: column; /* تغيير الاتجاه العمودي على الشاشات الصغيرة */
+                align-items: center;
+            }
+
+            .season {
+                width: 80%; /* تعديل عرض العنصر على الشاشات الصغيرة */
+            }
+
+            .episodes {
+                width: 80%; /* تعديل عرض العنصر على الشاشات الصغيرة */
+            }
+
+            .style2 {
+                width: 90%;
+                margin: 10px;
+                padding: 8px;
+            }
+
+            .li {
+                width: 90%;
+                margin: 10px 0;
+            }
+
+            p {
+                width: 80%;
+                font-size: 25px; /* تقليل حجم الخط على الشاشات الصغيرة */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .season {
+                width: 90%; /* تعديل عرض العنصر ليصبح أكبر على الشاشات الصغيرة جداً */
+            }
+
+            .episodes {
+                width: 90%; /* تعديل عرض العنصر ليصبح أكبر على الشاشات الصغيرة جداً */
+            }
+
+            p {
+                font-size: 20px; /* تقليل حجم الخط أكثر على الشاشات الصغيرة جداً */
+            }
+
+            .style2 {
+                width: 100%;
+                font-size: 14px; /* تقليل حجم الخط */
+                margin: 5px;
+            }
+
+            .li {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
     <h1>Family GUY <span style="font-family: Cairo;">مسلسل</span></h1>
     <div class="container">
