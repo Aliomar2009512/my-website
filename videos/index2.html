@@ -48,11 +48,13 @@
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             overflow: hidden;
+            width: 100%;
+            max-width: 800px; /* يمنع الفيديو من أن يتجاوز هذا العرض */
         }
 
         iframe {
             display: block;
-            width: 800px;
+            width: 100%; /* العرض سيكون بنسبة 100% */
             height: 480px;
             border: none;
         }
@@ -61,8 +63,38 @@
             background-color: rgb(9, 119, 9);
             color: black;
         }
+
+        /* تحسين استجابة الموقع لأحجام الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            a {
+                width: 50%;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            a {
+                width: 80%;
+            }
+
+            iframe {
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <h1>Family GUY <span style="font-family: Cairo;">مسلسل</span></h1>
     <div class="video-container">
